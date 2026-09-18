@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zire - Кофейня</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Zire</div>
+                <nav class="nav">
+                    <a href="#about" class="nav-link">О нас</a>
+                    <a href="#menu" class="nav-link">Меню</a>
+                    <a href="#promotions" class="nav-link">Акции</a>
+                    <a href="#vacancies" class="nav-link">Вакансии</a>
+                    <a href="#branches" class="nav-link">Филиалы</a>
+                    <a href="#contacts" class="nav-link">Контакты</a>
+                </nav>
+                <div class="header-right">
+                    <button class="order-type-btn">Тип заказа</button>
+                    <a href="https://wa.me/996990709709" target="_blank" class="phone-link">+996 99 070 97 09</a>
+                    <div class="header-actions">
+                        <button class="icon-btn search-btn" id="searchBtn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                        </button>
+                        <button class="icon-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 6h15l-1.5 9h-12z"></path>
+                                <circle cx="9" cy="20" r="1"></circle>
+                                <circle cx="18" cy="20" r="1"></circle>
+                            </svg>
+                        </button>
+                        <button class="icon-btn" id="favoritesBtn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </button>
+                        <button class="icon-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path d="M12 1v6m0 6v6"></path>
+                            </svg>
+                        </button>
+                        <button class="icon-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </button>
+                        <button class="icon-btn theme-toggle" id="themeToggle">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                            </svg>
+                        </button>
+                    <span class="header-slogan">Окунись в атмосферу уюта</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Категории -->
+    <section class="categories" id="menu">
+        <div class="container">
+            <div class="categories-wrapper">
+                <button class="scroll-btn scroll-left" id="scrollLeft">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <div class="categories-scroll" id="categoriesScroll">
+                    <button class="category-btn active" data-category="all">Все блюда</button>
+                    <button class="category-btn" data-category="pastry">Выпечка</button>
+                    <button class="category-btn" data-category="main">Основные блюда</button>
+                    <button class="category-btn" data-category="breakfast">Завтраки</button>
+                    <button class="category-btn" data-category="drinks">Напитки</button>
+                    <button class="category-btn" data-category="author-sweets">Авторские сладости</button>
+                    <button class="category-btn" data-category="cakes">Торты и пироги</button>
+                    <button class="category-btn" data-category="sweets">Сладости</button>
+                    <button class="category-btn" data-category="bar">Для бара</button>
+                    <button class="category-btn" data-category="other">Другое</button>
+                </div>
+                <button class="scroll-btn scroll-right" id="scrollRight">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Заголовок секции -->
+    <section class="section-title" id="categoryTitle">
+        <div class="container">
+            <h2>Все блюда</h2>
+        </div>
+    </section>
+
+    <!-- Все блюда (сортировка по алфавиту) -->
+    <section class="products" id="all">
+        <div class="container">
+            <div class="products-grid">
+                <!-- Паста Карбонара -->
+                <div class="product-card" data-name="Паста Карбонара">
+                    <div class="product-image">
+                        <img src="images/carbonara.png" alt="Паста Карбонара" class="product-img">
+                        <button class="favorite-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Паста "Карбонара"</h3>
+                        <div class="product-footer">
+                            <span class="product-price">480 ₽</span>
+                            <button class="add-to-cart-btn-main">Добавить</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Картофельное пюре -->
+                <div class="product-card" data-name="Картофельное пюре">
+                    <div class="product-image">
+                        <img src="images/mashed-potato.png" alt="Картофельное пюре" class="product-img">
+                        <button class="favorite-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Картофельное пюре</h3>
+                        <div class="product-footer">
+                            <span class="product-price">180 ₽</span>
+                            <button class="add-to-cart-btn-main">Добавить</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Кофе американо -->
+                <div class="product-card" data-name="Кофе американо">
+                    <div class="product-image">
+                        <img src="images/coffee.png" alt="Кофе американо" class="product-img">
+                        <button class="favorite-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Кофе американо</h3>
+                        <div class="product-footer">
+                            <span class="product-price">120 ₽</span>
+                            <button class="add-to-cart-btn-main">Добавить</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Салат Цезарь -->
+                <div class="product-card" data-name="Салат Цезарь">
+                    <div class="product-image">
+                        <img src="images/caesar.png" alt="Салат Цезарь" class="product-img">
+                        <button class="favorite-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Салат "Цезарь"</h3>
+                        <div class="product-footer">
+                            <span class="product-price">420 ₽</span>
+                            <button class="add-to-cart-btn-main">Добавить</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Хачапури по-аджарски -->
+                <div class="product-card" data-name="Хачапури по-аджарски">
+                    <div class="product-image">
+                        <img src="images/khachapuri.png" alt="Хачапури по-аджарски" class="product-img">
+                        <button class="favorite-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Хачапури по-аджарски</h3>
+                        <div class="product-footer">
+                            <span class="product-price">350 ₽</span>
+                            <button class="add-to-cart-btn-main">Добавить</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Яичница с беконом -->
+                <div class="product-card" data-name="Яичница с беконом">
+                    <div class="product-image">
+                        <img src="images/eggs-bacon.png" alt="Яичница с беконом" class="product-img">
+                        <button class="favorite-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Яичница с беконом</h3>
+                        <div class="product-footer">
+                            <span class="product-price">280 ₽</span>
+                            <button class="add-to-cart-btn-main">Добавить</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Лосось с картофельным пюре и овощами на гриле -->
+                <div class="product-card" data-name="Лосось с картофельным пюре и овощами на гриле">
+                    <div class="product-image">
+                        <img src="images/salmon.png" alt="Лосось с картофельным пюре и овощами на гриле" class="product-img">
+                        <button class="favorite-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Лосось с картофельным пюре и овощами на гриле</h3>
+                        <div class="product-footer">
+                            <span class="product-price">850 ₽</span>
+                            <button class="add-to-cart-btn-main">Добавить</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Стейк Рибай -->
+                <div class="product-card" data-name="Стейк Рибай">
+                    <div class="product-image">
+                        <img src="images/ribeye.png" alt="Стейк Рибай" class="product-img">
+                        <button class="favorite-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Стейк Рибай</h3>
+                        <div class="product-footer">
+                            <span class="product-price">1200 ₽</span>
+                            <button class="add-to-cart-btn-main">Добавить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Выпечка -->
+    <section class="products" id="pastry" style="display: none;">
+        <div class="container">
+            <div class="products-grid">
+                <!-- Хачапури по-аджарски -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/khachapuri.png" alt="Хачапури по-аджарски" class="product-img">
+                        <button class="favorite-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Хачапури по-аджарски</h3>
+                        <div class="product-footer">
+                            <span class="product-price">350 ₽</span>
+                            <button class="add-to-cart-btn-main">Добавить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Основные блюда -->
+    <section class="products" id="main" style="display: none;">
+        <div class="container">
+            <div class="products-grid">
+                <!-- Паста Карбонара -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/carbonara.png" alt="Паста Карбонара" class="product-img">
+                        <button class="favorite-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Паста "Карбонара"</h3>
+                        <div class="product-footer">
+                            <span class="product-price">480 ₽</span>
+                            <button class="add-to-cart-btn-main">Добавить</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Картофельное пюре -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/mashed-potato.png" alt="Картофельное пюре" class="product-img">
+                        <button class="favorite-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Картофельное пюре</h3>
+                        <div class="product-footer">
+                            <span class="product-price">180 ₽</span>
+                            <button class="add-to-cart-btn-main">Добавить</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Лосось с картофельным пюре и овощами на гриле -->
+                <div class="product-card" data-name="Лосось с картофельным пюре и овощами на гриле">
+                    <div class="product-image">
+                        <img src="images/salmon.png" alt="Лосось с картофельным пюре и овощами на гриле" class="product-img">
+                        <button class="favorite-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Лосось с картофельным пюре и овощами на гриле</h3>
+                        <div class="product-footer">
+                            <span class="product-price">850 ₽</span>
+                            <button class="add-to-cart-btn-main">Добавить</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Стейк Рибай -->
+                <div class="product-card" data-name="Стейк Рибай">
+                    <div class="product-image">
+                        <img src="images/ribeye.png" alt="Стейк Рибай" class="product-img">
+                        <button class="favorite-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Стейк Рибай</h3>
+                        <div class="product-footer">
+                            <span class="product-price">1200 ₽</span>
+                            <button class="add-to-cart-btn-main">Добавить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Завтраки -->
+    <section class="products" id="breakfast" style="display: none;">
+        <div class="container">
+            <div class="products-grid">
+                <!-- Салат Цезарь -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/caesar.png" alt="Салат Цезарь" class="product-img">
+                        <button class="favorite-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Салат "Цезарь"</h3>
+                        <div class="product-footer">
+                            <span class="product-price">420 ₽</span>
+                            <button class="add-to-cart-btn-main">Добавить</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Яичница с беконом -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/eggs-bacon.png" alt="Яичница с беконом" class="product-img">
+                        <button class="favorite-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Яичница с беконом</h3>
+                        <div class="product-footer">
+                            <span class="product-price">280 ₽</span>
+                            <button class="add-to-cart-btn-main">Добавить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Напитки -->
+    <section class="products" id="drinks" style="display: none;">
+        <div class="container">
+            <div class="products-grid">
+                <!-- Кофе американо -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/coffee.png" alt="Кофе американо" class="product-img">
+                        <button class="favorite-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Кофе американо</h3>
+                        <div class="product-footer">
+                            <span class="product-price">120 ₽</span>
+                            <button class="add-to-cart-btn-main">Добавить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Модальное окно поиска -->
+    <div class="modal" id="searchModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Наши самые вкусные блюда!</h2>
+                <button class="close-btn" id="closeModal">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="search-input-wrapper">
+                    <input type="text" class="search-input" placeholder="Найти блюдо...">
+                </div>
+                <div class="modal-categories">
+                    <a href="#all" class="modal-category-link">Все блюда</a>
+                    <a href="#pastry" class="modal-category-link">Выпечка</a>
+                    <a href="#main" class="modal-category-link">Основные блюда</a>
+                    <a href="#breakfast" class="modal-category-link">Завтраки</a>
+                    <a href="#drinks" class="modal-category-link">Напитки</a>
+                    <a href="#author-sweets" class="modal-category-link">Авторские сладости</a>
+                    <a href="#cakes" class="modal-category-link">Торты и пироги</a>
+                    <a href="#sweets" class="modal-category-link">Сладости</a>
+                    <a href="#bar" class="modal-category-link">Для бара</a>
+                    <a href="#other" class="modal-category-link">Другое</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Секция О нас -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="about-title">О нас</h2>
+            <p class="about-description">Добро пожаловать в кофейню Zire!</p>
+            <div class="about-links">
+                <a href="https://www.instagram.com/zire_osh/" target="_blank" class="about-link-card">
+                    <div class="about-link-icon instagram-icon">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3CradialGradient id='yOrnnhliCrdS2gy~4tD8ma' cx='19.38' cy='42.035' r='44.899' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23fd5'/%3E%3Cstop offset='.328' stop-color='%23ff543f'/%3E%3Cstop offset='.348' stop-color='%23fc5245'/%3E%3Cstop offset='.504' stop-color='%23e64771'/%3E%3Cstop offset='.643' stop-color='%23d53e91'/%3E%3Cstop offset='.761' stop-color='%23cc39a4'/%3E%3Cstop offset='.841' stop-color='%23c837ab'/%3E%3C/radialGradient%3E%3Cpath fill='url(%23yOrnnhliCrdS2gy~4tD8ma)' d='M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z'/%3E%3CradialGradient id='yOrnnhliCrdS2gy~4tD8mb' cx='11.786' cy='5.54' r='29.813' gradientTransform='matrix(1 0 0 .6663 0 1.849)' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%234168c9' stop-opacity='.999'/%3E%3Cstop offset='.999' stop-color='%234168c9' stop-opacity='0'/%3E%3C/radialGradient%3E%3Cpath fill='url(%23yOrnnhliCrdS2gy~4tD8mb)' d='M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z'/%3E%3Cpath fill='%23fff' d='M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z'/%3E%3Ccircle cx='31.5' cy='16.5' r='1.5' fill='%23fff'/%3E%3Cpath fill='%23fff' d='M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z'/%3E%3C/svg%3E" alt="Instagram" style="width: 32px; height: 32px;">
+                    </div>
+                    <span class="about-link-text">Мы в Instagram</span>
+                </a>
+                <a href="https://wa.me/996990709709" target="_blank" class="about-link-card">
+                    <div class="about-link-icon whatsapp-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="white" stroke-width="2" fill="none"></path>
+                        </svg>
+                    </div>
+                    <span class="about-link-text">+996 99 070 97 09</span>
+                </a>
+                <a href="geo:0,0?q=Alymbek+Datka+287+a,+Osh,+Kyrgyzstan+723500" target="_blank" class="about-link-card">
+                    <div class="about-link-icon location-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="white" stroke-width="2" fill="none"></path>
+                            <circle cx="12" cy="10" r="3" stroke="white" stroke-width="2" fill="none"></circle>
+                        </svg>
+                    </div>
+                    <span class="about-link-text">Найти на карте</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция Акции -->
+    <section id="promotions" class="info-section">
+        <div class="container">
+            <h2>Акции</h2>
+            <p>Актуальные акции и специальные предложения.</p>
+        </div>
+    </section>
+
+    <!-- Секция Вакансии -->
+    <section id="vacancies" class="info-section">
+        <div class="container">
+            <h2>Вакансии</h2>
+            <p>Присоединяйтесь к нашей команде!</p>
+        </div>
+    </section>
+
+    <!-- Секция Филиалы -->
+    <section id="branches" class="info-section">
+        <div class="container">
+            <h2>Филиалы</h2>
+            <p>Наши адреса и контакты филиалов.</p>
+        </div>
+    </section>
+
+    <!-- Секция Контакты -->
+    <section id="contacts" class="info-section">
+        <div class="container">
+            <h2>Контакты</h2>
+            <p>Свяжитесь с нами: <a href="https://wa.me/996990709709" target="_blank">+996 99 070 97 09</a></p>
+        </div>
+    </section>
+
+    <!-- Toast уведомление -->
+    <div id="toastNotification" class="toast-notification">
+        Успешно добавлено в корзину
+    </div>
+
+    <!-- Уведомление об избранном -->
+    <div id="favoriteToast" class="favorite-toast">
+        Добавлено в Избранное
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
