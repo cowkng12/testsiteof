@@ -198,7 +198,7 @@ body.dark-theme .quantity-controls-main {
 .categories {
     background-color: var(--bg-primary);
     padding: 20px 0;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.22);
     z-index: 90;
     backdrop-filter: blur(10px);
     transition: background-color 0.3s, border-color 0.3s;
@@ -825,7 +825,7 @@ body.dark-theme .modal {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     pointer-events: none;
     overflow: hidden;
-    min-width: 220px;
+    min-width: 320px;
     text-align: center;
 }
 
@@ -841,7 +841,7 @@ body.dark-theme .modal {
     left: 0;
     width: 0%;
     height: 3px;
-    background-color: #050505;
+    background-color: #ffffff;
     transition: none;
 }
 
@@ -872,7 +872,8 @@ body.dark-theme .modal {
 .favorite-toast {
     position: fixed;
     top: 100px;
-    left: 30px;
+    left: auto;
+    right: 30px;
     background-color: var(--accent-color);
     color: #ffffff;
     padding: 16px 24px;
@@ -882,9 +883,11 @@ body.dark-theme .modal {
     font-size: 15px;
     z-index: 1001;
     opacity: 0;
-    transform: translateX(-20px);
+    transform: translateX(20px);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     pointer-events: none;
+    min-width: 360px;
+    text-align: center;
 }
 
 .favorite-toast.show {
@@ -1074,14 +1077,15 @@ body.dark-theme .modal {
 /* Favorites Badge */
 .favorites-badge {
     position: absolute;
-    top: -5px;
-    right: -5px;
-    background-color: #e74c3c;
+    top: 50%;
+    right: -2px;
+    transform: translateY(-50%);
+    background-color: transparent;
     color: white;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 700;
-    width: 18px;
-    height: 18px;
+    width: auto;
+    height: auto;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1093,6 +1097,12 @@ body.dark-theme .modal {
 }
 
 @media (max-width: 768px) {
+    .favorite-toast {
+        right: 16px;
+        left: 16px;
+        min-width: 0;
+    }
+
     .favorite-item {
         grid-template-columns: 80px 1fr;
         gap: 15px;
@@ -1150,4 +1160,23 @@ body.dark-theme .modal {
     font-size: 16px;
     min-width: 20px;
     text-align: center;
+}
+
+/* Основные кнопки карточек всегда используют фирменный синий цвет. */
+button.add-to-cart-btn-main,
+button.add-to-cart-btn-main.has-quantity {
+    appearance: none;
+    -webkit-appearance: none;
+    background: #17213b !important;
+    background-color: #17213b !important;
+    color: #ffffff !important;
+    border: 0 !important;
+    border-radius: 25px !important;
+    padding: 10px 24px !important;
+    min-height: 40px;
+}
+
+button.add-to-cart-btn-main:hover,
+button.add-to-cart-btn-main.has-quantity:hover {
+    background: #0f1629 !important;
 }
