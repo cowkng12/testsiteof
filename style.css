@@ -813,10 +813,10 @@ body.dark-theme .modal {
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%) translateY(20px);
-    background-color: var(--accent-color);
-    color: #ffffff;
-    padding: 16px 24px;
-    border-radius: 12px;
+    background-color: #17213b;
+    color: #050505;
+    padding: 12px 22px 14px;
+    border-radius: 4px;
     box-shadow: var(--shadow-lg);
     font-weight: 600;
     font-size: 15px;
@@ -825,7 +825,7 @@ body.dark-theme .modal {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     pointer-events: none;
     overflow: hidden;
-    min-width: 280px;
+    min-width: 220px;
     text-align: center;
 }
 
@@ -841,8 +841,18 @@ body.dark-theme .modal {
     left: 0;
     width: 0%;
     height: 3px;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: #050505;
     transition: none;
+}
+
+.toast-notification.toast-light {
+    bottom: 58px;
+    background-color: #ffffff;
+    color: #050505;
+}
+
+.toast-notification.toast-light::after {
+    background-color: #050505;
 }
 
 .toast-notification.show::after {

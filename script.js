@@ -161,7 +161,7 @@ function toggleFavorite(productName, button) {
     const index = favoriteItems.findIndex(item => item.name === productName);
     if (index > -1) {
         favoriteItems.splice(index, 1);
-        button.classList.remove('active');
+        button.classList.remove('active-favorite');
     } else {
         const card = button.closest('.product-card');
         const img = card.querySelector('.product-img');
@@ -173,11 +173,20 @@ function toggleFavorite(productName, button) {
                 img: img.src, 
                 price: priceEl.textContent 
             });
-            button.classList.add('active');
+            button.classList.add('active-favorite');
+            showFavoriteToast();
         }
     }
     localStorage.setItem('favorites', JSON.stringify(favoriteItems));
     updateFavoritesCount();
+}
+
+function showFavoriteToast() {
+    const toast = document.getElementById('favoriteToast');
+    if (!toast) return;
+    toast.classList.remove('show');
+    requestAnimationFrame(() => toast.classList.add('show'));
+    window.setTimeout(() => toast.classList.remove('show'), 2500);
 }
 
 // Функция отображения модального окна избранного
@@ -262,8 +271,20 @@ window.changeQuantity = function(productName, delta) {
     showFavoritesModal();
 };
 
-// Обработчик кнопки избранного
-favoritesBtn.addEventListener('click', showFavoritesModal);
+// Иконка избранного в шапке остаётся визуальным индикатором без перехода.
+favoritesBtn.addEventListener('click', (event) => event.preventDefault());
+
+let toastTimer;
+function showCartToast(message = 'Добавлено в корзину', variant = 'default') {
+    const toast = document.getElementById('toastNotification');
+    if (!toast) return;
+    toast.textContent = message;
+    toast.classList.toggle('toast-light', variant === 'light');
+    toast.classList.remove('show');
+    window.clearTimeout(toastTimer);
+    requestAnimationFrame(() => toast.classList.add('show'));
+    toastTimer = window.setTimeout(() => toast.classList.remove('show'), 3000);
+}
 
 // Обработка кнопок "Добавить" на карточках товаров
 document.querySelectorAll('.add-to-cart-btn-main').forEach(button => {
@@ -272,39 +293,16 @@ document.querySelectorAll('.add-to-cart-btn-main').forEach(button => {
         const card = this.closest('.product-card');
         const productName = card.getAttribute('data-name');
         
-        if (!cartItems[productName]) {
-            cartItems[productName] = 1;
-            localStorage.setItem('cart', JSON.stringify(cartItems));
-            updateCartButton(this, productName);
-        }
+        cartItems[productName] = 1;
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+        showCartToast();
     });
 });
 
-// Функция обновления кнопки "Добавить" - показывает счетчик ВНУТРИ кнопки
+// Кнопка карточки всегда остаётся простой кнопкой "Добавить".
 function updateCartButton(button, productName) {
-    const quantity = cartItems[productName] || 0;
-    
-    if (quantity > 0) {
-        button.innerHTML = `
-            <button class="quantity-btn-inline minus">-</button>
-            <span class="quantity-display-inline">${quantity}</span>
-            <button class="quantity-btn-inline plus">+</button>
-        `;
-        button.classList.add('has-quantity');
-        
-        button.querySelector('.minus').addEventListener('click', (e) => {
-            e.stopPropagation();
-            changeQuantityMain(productName, -1, button);
-        });
-        
-        button.querySelector('.plus').addEventListener('click', (e) => {
-            e.stopPropagation();
-            changeQuantityMain(productName, 1, button);
-        });
-    } else {
-        button.innerHTML = 'Добавить';
-        button.classList.remove('has-quantity');
-    }
+    button.textContent = 'Добавить';
+    button.classList.remove('has-quantity');
 }
 
 // Функция изменения количества на главных карточках
@@ -326,7 +324,7 @@ document.querySelectorAll('.favorite-btn').forEach(button => {
     const productName = card.getAttribute('data-name');
     
     if (favoriteItems.some(item => item.name === productName)) {
-        button.classList.add('active');
+        button.classList.add('active-favorite');
     }
     
     button.addEventListener('click', function(e) {
@@ -342,8 +340,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.product-card').forEach(card => {
         const productName = card.getAttribute('data-name');
         const button = card.querySelector('.add-to-cart-btn-main');
-        if (button && cartItems[productName]) {
-            updateCartButton(button, productName);
-        }
+        if (button) updateCartButton(button, productName);
     });
 });
