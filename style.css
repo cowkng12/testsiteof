@@ -1385,3 +1385,82 @@ button.add-to-cart-btn-main:hover,
 button.add-to-cart-btn-main.has-quantity:hover {
     background: #0f1629 !important;
 }
+
+/* Mobile layout */
+@media (max-width: 768px) {
+    .container { padding-left: 16px; padding-right: 16px; }
+    .header { padding: 10px 0 8px; }
+    .header-content { flex-wrap: wrap; gap: 8px 12px; }
+    .logo { font-size: 25px; text-decoration: none; }
+    .header-right { margin-left: auto; gap: 6px; }
+    .header-actions { gap: 1px; }
+    .header-actions .icon-btn { width: 34px; height: 34px; padding: 7px; }
+
+    .nav {
+        display: flex;
+        order: 3;
+        width: 100%;
+        gap: 20px;
+        overflow-x: auto;
+        padding: 7px 0 2px;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+    .nav::-webkit-scrollbar { display: none; }
+    .nav-link { flex: 0 0 auto; font-size: 13px; }
+
+    .hero-banner { padding: 12px 0 4px; }
+    .hero-banner-card { min-height: 0; aspect-ratio: 16 / 5; border-radius: 12px; }
+    .hero-banner-image { object-fit: cover; }
+
+    .categories { padding: 12px 0; }
+    .categories-wrapper { gap: 8px; }
+    .categories .scroll-btn { display: none; }
+    .categories-scroll {
+        gap: 8px;
+        padding: 2px 0;
+        scroll-snap-type: x proximity;
+    }
+    .category-btn { padding: 8px 16px; font-size: 13px; scroll-snap-align: start; }
+
+    .section-title { padding: 28px 0 20px; scroll-margin-top: 120px; }
+    .section-title h2 { font-size: 27px; }
+    .products { padding-bottom: 40px; }
+    .products-grid { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+    .product-card { border-radius: 13px; }
+    .product-card:hover { transform: none; }
+    .product-info { padding: 16px; }
+    .product-footer { gap: 12px; }
+    .add-to-cart-btn-main { min-height: 42px; padding: 10px 20px; }
+
+    .info-section { min-height: 240px; padding: 48px 0; }
+    .info-section h2 { font-size: 29px; }
+    .info-section p { font-size: 16px; }
+
+    .modal-content {
+        max-height: calc(100vh - 24px);
+        overflow-y: auto;
+        margin: 12px;
+    }
+    .toast-notification {
+        width: calc(100% - 32px);
+        min-width: 0;
+        bottom: 16px;
+        font-size: 14px;
+    }
+
+    .contact-page .about-section { min-height: 0; padding: 42px 0 64px; }
+    .contact-page .about-title { font-size: 32px; line-height: 1.15; }
+    .contact-page .about-copy .about-description { font-size: 15px; margin-bottom: 12px; }
+    .contact-socials { margin: 26px 0; gap: 12px; }
+    .contact-social-card { min-width: 0; padding: 14px 16px; }
+    .about-form { gap: 14px; }
+    .about-form input, .about-form textarea { font-size: 16px; }
+}
+
+@media (max-width: 420px) {
+    .header-actions .icon-btn:nth-child(4),
+    .header-actions .icon-btn:nth-child(5) { display: none; }
+    .hero-banner-card { aspect-ratio: 3 / 1; }
+    .product-name, .product-price { font-size: 17px; }
+}
