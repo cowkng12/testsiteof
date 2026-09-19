@@ -186,7 +186,7 @@ function showFavoriteToast() {
     if (!toast) return;
     toast.classList.remove('show');
     requestAnimationFrame(() => toast.classList.add('show'));
-    window.setTimeout(() => toast.classList.remove('show'), 2500);
+    window.setTimeout(() => toast.classList.remove('show'), 3000);
 }
 
 // Функция отображения модального окна избранного
