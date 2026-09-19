@@ -718,6 +718,98 @@ body.dark-theme .modal {
     background-color: var(--bg-primary);
 }
 
+body:not(.contact-page) .legacy-about-section {
+    display: none;
+}
+
+.contact-page .about-section {
+    display: block;
+    min-height: calc(100vh - 90px);
+    padding: 78px 0 100px;
+}
+
+.contact-page .about-layout {
+    display: block;
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+.contact-page .about-copy {
+    text-align: center;
+}
+
+.contact-page .about-title,
+.contact-page .about-copy .about-description {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-page .about-title {
+    margin-bottom: 22px;
+}
+
+.contact-page .about-copy .about-description {
+    max-width: 760px;
+}
+
+.contact-page .about-contact-link {
+    display: none;
+}
+
+.contact-socials {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin: 36px 0 30px;
+}
+
+.contact-social-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 220px;
+    padding: 15px 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    color: var(--text-primary);
+    text-decoration: none;
+    background: var(--card-bg);
+    transition: border-color .2s, transform .2s;
+}
+
+.contact-social-card:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.contact-social-card svg {
+    width: 28px;
+    height: 28px;
+    fill: none;
+    stroke: var(--text-secondary);
+    stroke-width: 1.8;
+}
+
+.contact-page .about-form {
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+.contact-page .about-submit {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .contact-socials {
+        flex-direction: column;
+    }
+
+    .contact-social-card {
+        width: 100%;
+    }
+}
+
 .about-section .container {
     max-width: 1200px;
 }
