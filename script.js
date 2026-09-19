@@ -8,6 +8,7 @@ const scrollLeft = document.getElementById('scrollLeft');
 const scrollRight = document.getElementById('scrollRight');
 const categoryTitle = document.getElementById('categoryTitle');
 const favoritesBtn = document.getElementById('favoritesBtn');
+const aboutForm = document.getElementById('aboutForm');
 
 // Категории и их названия
 const categoryNames = {
@@ -138,6 +139,15 @@ themeToggle.addEventListener('click', () => {
 
 if (localStorage.getItem('theme') === 'dark') {
     document.body.classList.add('dark-theme');
+}
+
+// Форма обратной связи: заявка никуда не отправляется, показываем подтверждение на сайте.
+if (aboutForm) {
+    aboutForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        aboutForm.reset();
+        showCartToast('Спасибо за обращение!');
+    });
 }
 
 // Функция обновления счетчика избранных

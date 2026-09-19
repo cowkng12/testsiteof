@@ -83,14 +83,6 @@
         <div class="container">
             <div class="hero-banner-card">
                 <img class="hero-banner-image" src="images/zire-banner.png" alt="Фирменная подача Zire">
-                <div class="hero-banner-overlay"></div>
-                <div class="hero-banner-content">
-                    <p class="hero-banner-kicker">Zire coffee &amp; kitchen</p>
-                    <h1 class="hero-banner-title">Заберите атмосферу Zire с собой</h1>
-                    <p class="hero-banner-text">Фирменные блюда, свежая выпечка и кофе для уютного дня.</p>
-                    <a class="hero-banner-cta" href="#menu">Смотреть меню <span aria-hidden="true">&#8594;</span></a>
-                </div>
-                <div class="hero-banner-controls" aria-hidden="true"><button type="button">&#8592;</button><span class="hero-banner-dot active"></span><span class="hero-banner-dot"></span><span class="hero-banner-dot"></span><button type="button">&#8594;</button></div>
             </div>
         </div>
     </section>
@@ -562,8 +554,11 @@
     <!-- Секция О нас -->
     <section id="about" class="about-section">
         <div class="container">
-            <h2 class="about-title">О нас</h2>
-            <p class="about-description">Добро пожаловать в кофейню Zire!</p>
+            <h2 class="about-title">Связаться с нами</h2>
+            <p class="about-description">Если у вас есть вопросы, предложения или пожелания, пожалуйста, свяжитесь с нами!</p>
+            <p class="about-description">Заполните форму ниже, и мы свяжемся с вами в кратчайшие сроки.</p>
+            <a class="about-contact-link" href="https://wa.me/996990709709" target="_blank" rel="noopener">&#9742; &nbsp; +996 99 070 97 09</a>
+            <a class="about-contact-link" href="https://www.instagram.com/zire_osh/" target="_blank" rel="noopener">◎ &nbsp; Instagram</a>
             <div class="about-links">
                 <a href="https://www.instagram.com/zire_osh/" target="_blank" class="about-link-card">
                     <div class="about-link-icon instagram-icon">
@@ -589,6 +584,12 @@
                     <span class="about-link-text">Найти на карте</span>
                 </a>
             </div>
+            <form class="about-form" id="aboutForm">
+                <label><span>Имя <b>*</b></span><input name="name" type="text" required placeholder="Ваше имя"></label>
+                <label><span>Номер телефона <b>*</b></span><input name="phone" type="tel" required placeholder="+996 ..."></label>
+                <label><span>Сообщение <b>*</b></span><textarea name="message" required placeholder="Напишите свой вопрос"></textarea></label>
+                <button type="submit" class="about-submit">Отправить</button>
+            </form>
         </div>
     </section>
 
